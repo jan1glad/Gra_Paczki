@@ -3,7 +3,7 @@ let size = 10;
 let N1 = 10
 let N2 = 11
 
-let speed = 3;
+let speed = 4;
 
 
 let position = [];
@@ -96,9 +96,17 @@ function createTable() {
                             leftShoots+=1;
                         }
                     }
-                        if (score === 9 && leftShoots>0){
-                            score+=leftShoots;
-                            let x = "Gratulacje wygrałeś! Zostało ci jeszcze " + leftShoots + ". strzały";
+                    let x;
+                    if (score === 9 && leftShoots>0){
+                        
+                        score+=leftShoots;
+                        if (leftShoots === 1){
+                            x = "Gratulacje wygrałeś! Został ci jeszcze " + leftShoots + ". strzał";
+                        }if (leftShoots >= 1 && leftShoots <=4){
+                            x = "Gratulacje wygrałeś! Zostało ci jeszcze " + leftShoots + ". strzały";
+                        }else {
+                            x = "Gratulacje wygrałeś! Zostało ci jeszcze " + leftShoots + ". strzałów";
+                        }
                             document.getElementById("koniec").style.display = "initial";
                             document.getElementById("koniec").innerHTML = x;
                             document.getElementById("wynikGry").innerHTML = score;
