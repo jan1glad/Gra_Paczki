@@ -3,7 +3,7 @@ let size = 10;
 let N1 = 10
 let N2 = 11
 
-let speed = 4;
+let speed = 3;
 
 
 let position = [];
