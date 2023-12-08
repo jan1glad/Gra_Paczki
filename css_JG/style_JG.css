@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+    font-style: italic;
+    }
+    h1{
+        color: green;
+    }
+    h2{
+        color: brown;
+    }
+
+#plansza {
+    width: 100%;
+
+    border-collapse: separate;
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: groove;
+    color: #000000;
+}
+
+#plansza td, #plansza th {
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: groove;
+    padding: 5px;
+}
+
+#plansza thead {
+    background-color: #7EA8F8;
+}
+    
+    #page_footer{
+    font-style: italic;
+    font-size: small;
+    }
+    

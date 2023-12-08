@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_JG/style_JG.css">
+    <script src="js_JG/kolejnaproba.js"></script>
+    <title>Gra paczki</title>
+</head>
+<body onload="loadIt()">
+    
+<!--    <h1>Speed = 4-->
+<!--        <br>-->
+<!--        N1 = 10-->
+<!--        <br>-->
+<!--        N2 = 11-->
+<!--        <br>-->
+<!--    </h1>-->
+
+    <h1>Spadajace Paczki</h1>
+    <h2>Decyduj o strzale</h2>
+    <h3>Jan Gładykowski</h3>
+    <h4>Gra losowa</h4>
+    <h4 id="koniec"></h4>
+    <br>
+    <br>
+
+
+    
+    <table id="plansza">
+        
+    </table>
+    <br>
+
+    <button id="startGame" onclick="gameStart()">Start gry</button>
+    <button id="newGame" onclick="newGame()">Nowa gra</button>
+    <br>
+    <label> Wynik gry: </label><p id="wynikGry"></p>
+    <button id="ruchPaczek" onclick="movePack()">Ruch paczek</button>
+
+<footer>Gładykowski &copy; 2023</footer>
+
+
+</body>
+</html>
