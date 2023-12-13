@@ -26,15 +26,17 @@ function loadIt(){
 function gameStart(){
     document.getElementById("startGame").style.display = "initial";
     document.getElementById("wynikGry").innerHTML = score;
-    for (let i =1;i<size;i++){
+    for (let i =1;i<=N1;i++){
         position[0] = shoot[0] = amunition[0] = 0;
         position[i] = 0;
         shoot[i]=1;
         amunition[i]=1;
         document.getElementById(0+ " - "+ i).style.background = "green";
         document.getElementById(i+ " - "+ 0).style.background = "red";
+
     }
-    
+     document.getElementById("10 - 0").innerHTML = "Meta";
+     document.getElementById("10 - 0").style.background = "orange";
     document.getElementById("startGame").style.display = "none";
     
 }
@@ -48,23 +50,24 @@ function newGame() {
     gameStart();
     document.getElementById("newGame").style.display = "none";
     document.getElementById("ruchPaczek").style.display = "initial";
+
 }
 
 
 
 function createTable() {
     let table = document.getElementById("plansza");
-    for (let i = 0; i <= size; i++) {
+    for (let i = 0; i <= N1; i++) {
 
         let row = table.insertRow(i);
 
-        for (let j = 0; j < size; j++) {
+        for (let j = 0; j <= N2; j++) {
             let column = row.insertCell(j);
 
             column.id = i + " - " + j;
             column.innerHTML = column.id;
 
-            if (j === 0) {
+            if (j === 0 && i<N1) {
                 column.addEventListener('click', function () {
                    
                         if (amunition[i] === 1) {
@@ -74,7 +77,7 @@ function createTable() {
                             console.log(position);
                             console.log("++++")
                         
-                                for (let k = 1; k < size; k++) {
+                                for (let k = 1; k < N1; k++) {
                                     console.log(position[k]);
                                     console.log("----");
                                     
@@ -91,7 +94,7 @@ function createTable() {
                        
                     }
                         let leftShoots = 0;
-                    for (let i=1;i<size;i++){
+                    for (let i=1;i<N1;i++){
                         if (amunition[i]===1){
                             leftShoots+=1;
                         }
@@ -103,7 +106,7 @@ function createTable() {
                         if (leftShoots === 1){
                             x = "Gratulacje wygrałeś! Został ci jeszcze " + leftShoots + ". strzał";
                         }if (leftShoots >= 1 && leftShoots <=4){
-                            x = "Gratulacje wygrałeś! Zostało ci jeszcze " + leftShoots + ". strzały";
+                            x = "Gratulacje wygrałeś! Zostały ci jeszcze " + leftShoots + ". strzały";
                         }else {
                             x = "Gratulacje wygrałeś! Zostało ci jeszcze " + leftShoots + ". strzałów";
                         }
@@ -128,7 +131,7 @@ function createTable() {
 function movePack() {
     
 
-    for (let j = 1; j <= size; j++) {
+    for (let j = 1; j <= N2; j++) {
         if (position[j] < 10 && shoot[j]===1) {
             moveGame(j);
         }
@@ -149,7 +152,7 @@ function moveGame(j){
 
         position[j] = m;
     
-        if (position[j]===size+1){
+        if (position[j]===N2+1){
             shoot[j]=0;
         }
     
